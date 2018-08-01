@@ -46,17 +46,17 @@ namespace PrivacyApplication
             app.UseTwoFactorRememberBrowserCookie(DefaultAuthenticationTypes.TwoFactorRememberBrowserCookie);
 
             // Uncomment the following lines to enable logging in with third party login providers
-            //app.UseMicrosoftAccountAuthentication(
-            //    clientId: "",
-            //    clientSecret: "");
+            app.UseMicrosoftAccountAuthentication(
+                clientId: "b1d68a72-b249-4f4c-b47f-81446c7ea783",
+                clientSecret: "xwqMGE83$bodoWUAL332$=:");
 
             //app.UseTwitterAuthentication(
             //   consumerKey: "",
             //   consumerSecret: "");
 
             app.UseFacebookAuthentication(
-               appId: "260017111257352",
-               appSecret: "24ce6185293939c067a1aab7d56222bc");
+               appId: "231681014336330",
+               appSecret: "6f051c06443d77c2751f18e6b4f696fb");
 
             app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
             {

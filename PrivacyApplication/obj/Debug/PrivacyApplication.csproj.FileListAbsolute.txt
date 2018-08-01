@@ -144,3 +144,13 @@ D:\Projects\PrivacyApplication\PrivacyApplication\bin\PreMailer.Net.dll
 D:\Projects\PrivacyApplication\PrivacyApplication\bin\SgmlReaderDll.dll
 D:\Projects\PrivacyApplication\PrivacyApplication\bin\Thrift.dll
 D:\Projects\PrivacyApplication\PrivacyApplication\bin\CsQuery.xml
+D:\Projects\PrivacyApplication\PrivacyApplication\bin\Microsoft.IdentityModel.Logging.dll
+D:\Projects\PrivacyApplication\PrivacyApplication\bin\Microsoft.IdentityModel.Tokens.dll
+D:\Projects\PrivacyApplication\PrivacyApplication\bin\SendGrid.dll
+D:\Projects\PrivacyApplication\PrivacyApplication\bin\System.IdentityModel.Tokens.Jwt.dll
+D:\Projects\PrivacyApplication\PrivacyApplication\bin\Twilio.dll
+D:\Projects\PrivacyApplication\PrivacyApplication\bin\Microsoft.IdentityModel.Tokens.xml
+D:\Projects\PrivacyApplication\PrivacyApplication\bin\SendGrid.pdb
+D:\Projects\PrivacyApplication\PrivacyApplication\bin\SendGrid.xml
+D:\Projects\PrivacyApplication\PrivacyApplication\bin\System.IdentityModel.Tokens.Jwt.xml
+D:\Projects\PrivacyApplication\PrivacyApplication\bin\Twilio.xml

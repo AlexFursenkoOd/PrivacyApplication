@@ -22,3 +22,24 @@ select,
 textarea {
     max-width: 280px;
 }
+
+.login-layout{
+    background: url("https://helpx.adobe.com/content/dam/help/en/illustrator/using/gradients/_jcr_content/main-pars/image_102526486/gradient-hero-image.png");
+    background-repeat:no-repeat;
+    height:100%;
+    background-attachment:fixed;
+    background-position: right top;
+    background-size: 50% 100%;
+}
+
+@media screen and (max-width: 991px){
+    .login-layout{
+        background:rgba(142,117,136,1);
+        background-size: 100% 100%;
+    }
+}
+.card{
+    border-radius:15px;
+    box-shadow: rgba(0,0,0,0.15) -10px -10px;
+    background-color:white;
+}

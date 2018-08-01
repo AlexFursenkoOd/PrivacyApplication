@@ -11,6 +11,13 @@ using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin;
 using Microsoft.Owin.Security;
 using PrivacyApplication.Models;
+using PrivacyApplication.Settings;
+using SendGrid;
+using System.Net;
+using System.Configuration;
+using System.Diagnostics;
+using SendGrid.Helpers.Mail;
+using System.Net.Mail;
 
 namespace PrivacyApplication
 {
@@ -19,7 +26,23 @@ namespace PrivacyApplication
         public Task SendAsync(IdentityMessage message)
         {
             // Plug in your email service here to send an email.
-            return Task.FromResult(0);
+            return ConfigSendGridAsync(message);
+        }
+
+        private async Task ConfigSendGridAsync(IdentityMessage message)
+        {
+            var myMessage = new SendGridMessage();
+            myMessage.AddTo(message.Destination);
+            myMessage.From = new EmailAddress("andersen.od.ua@gmail.com", "Alex F");
+            myMessage.Subject = message.Subject;
+            myMessage.PlainTextContent = message.Body;
+            myMessage.HtmlContent = message.Body;
+
+            var credentials = new NetworkCredential("andersen.od.ua@gmail.com", "AndersenF3");
+
+            var transportWeb = new SendGridClient("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");
+
+            var result = await transportWeb.SendEmailAsync(myMessage);
         }
     }
 
@@ -28,6 +51,14 @@ namespace PrivacyApplication
         public Task SendAsync(IdentityMessage message)
         {
             // Plug in your SMS service here to send a text message.
+            var soapSms = new PrivacyApplication.ASPSMSX2.ASPSMSX2SoapClient("ASPSMSX2Soap");
+            soapSms.SendSimpleTextSMS(
+              Keys.SMSAccountIdentification,
+              Keys.SMSAccountPassword,
+              message.Destination,
+              Keys.SMSAccountFrom,
+              message.Body);
+            soapSms.Close();
             return Task.FromResult(0);
         }
     }
@@ -54,8 +85,8 @@ namespace PrivacyApplication
             manager.PasswordValidator = new PasswordValidator
             {
                 RequiredLength = 6,
-                RequireNonLetterOrDigit = true,
-                RequireDigit = true,
+                RequireNonLetterOrDigit = false,
+                RequireDigit = false,
                 RequireLowercase = true,
                 RequireUppercase = true,
             };
